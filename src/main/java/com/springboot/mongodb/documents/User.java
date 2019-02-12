@@ -1,58 +1,54 @@
 /**
  * 
+ * Author :Mahideep 2019
+ * 
  */
+
 package com.springboot.mongodb.documents;
 
-import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-/**
- * @author Mahideep Tumati
- *
- * Created on Feb 11, 2019
- */
 
 @Document(collection="user")
 public class User {
 
-	
-	@Id 
-	private Integer id;
-	
-	private String firstName;
-	
-	private String lastName;
-	
+	@Id
+	private String userId;
+	private String name;
 	private String address;
+
+	private Map<String, String> userSettings = new HashMap<>();
+
 	
-	private int mobile;
-
-	public Integer getId() {
-		return id;
+	
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getCreationDate() {
+		return address;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setCreationDate(String address) {
+		this.address = address;
 	}
+
+	
 
 	public String getAddress() {
 		return address;
@@ -62,30 +58,26 @@ public class User {
 		this.address = address;
 	}
 
-	public int getMobile() {
-		return mobile;
+	public Map<String, String> getUserSettings() {
+		return userSettings;
 	}
 
-	public void setMobile(int mobile) {
-		this.mobile = mobile;
+	public void setUserSettings(Map<String, String> userSettings) {
+		this.userSettings = userSettings;
 	}
 
 	/**
-	 * @param id
-	 * @param firstName
-	 * @param lastName
-	 * @param address
-	 * @param mobile
+	 * @param userId
+	 * @param name
+	 * @param creationDate
+	 * @param userSettings
 	 */
-	public User(Integer id, String firstName, String lastName, String address, int mobile) {
+	public User(String userId, String name, String address) {
 		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.userId = userId;
+		this.name = name;
 		this.address = address;
-		this.mobile = mobile;
 	}
-	
 	
 	
 	

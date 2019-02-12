@@ -14,6 +14,5 @@ import com.springboot.mongodb.documents.User;
  * Created on Feb 11, 2019
  */
 @Repository
-public interface UserRepository extends MongoRepository<User, Integer> {
-
+public interface UserRepository extends MongoRepository<User, String> {
 }
